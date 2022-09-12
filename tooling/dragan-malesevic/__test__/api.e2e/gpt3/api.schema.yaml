@@ -1,0 +1,18 @@
+---
+type: express
+port: 3000
+
+endpoints:
+  "gpt3/complete":
+    method: post
+    pipe:
+    - wrappers/express/in
+    - services/gpt3/complete
+    - wrappers/express/out
+  
+  "gpt3/sentiment":
+    method: post
+    pipe:
+    - wrappers/express/in
+    - services/gpt3/sentiment
+    - wrappers/express/out

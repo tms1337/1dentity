@@ -1,0 +1,29 @@
+{
+  "type": "REST",
+  "endpoints": {
+    "/gpt3/complete": {
+      "pipe": [
+        {
+          "at": "services",
+          "which": "gpt3/complete"
+        },
+        {
+          "at": "wrappers",
+          "which": "express"
+        }
+      ]
+    },
+    "/gpt3/sentiment": {
+      "pipe": [
+        {
+          "at": "services",
+          "which": "gpt3/sentiment"
+        },
+        {
+          "at": "wrappers",
+          "which": "express"
+        }
+      ]
+    }
+  }
+}

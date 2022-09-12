@@ -1,0 +1,55 @@
+function mint():
+
+    inputs:
+    -------------------------------------------------------------------
+
+      ADDR in:receiver
+        where a NOT EQUAL 0x0
+
+      INT in:amount
+        where x > 0
+
+    pre:
+    -------------------------------------------------------------------
+
+      in:caller is in my:MINTERS_G
+
+      # dummy example
+      in:receiver NOT EQUAL peer:other
+
+    # example of other contract call 
+    # by default CALL result saved in variable
+    # called call:y
+    # parameters also stored in an array call:x
+    
+    do:
+    -------------------------------------------------------------------
+
+      CALL peer:other.f
+        inputs:
+          in:amount
+
+      TEMP INT temp:result
+      temp:result = call:y
+
+      my:balances[in:receiver] ADD in:amount
+      my:total_tokens ADD in:amount
+
+
+    post:
+    -------------------------------------------------------------------
+
+      my:balances[x] NO CHANGE
+        where x NOT EQUAL in:receiver
+
+      my:balances[x] NO CHANGE
+        where x NOT EQUAL in:receiver
+
+      my:balances[peer:other] NO CHANGE
+
+      my:balances[in:receiver] INC
+
+      my:total_tokens INC
+
+      # ensures no ETH stolen
+      peer:other.value NO CHANGE

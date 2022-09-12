@@ -1,0 +1,11 @@
+---
+type: REST
+port: 3000
+
+endpoints:
+  "banking/country/is-sepa":
+    method: post
+    pipe:
+    - wrappers/express/in
+    - transformers/banking/country/isSepa
+    - wrappers/express/out

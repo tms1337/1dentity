@@ -1,0 +1,10 @@
+---
+type: REST
+endpoints:
+  "/gpt3/complete":
+    method: post
+    pipe:
+    - wrappers/express/in
+    - services/gpt3/complete
+    - wrappers/express/out
+  
