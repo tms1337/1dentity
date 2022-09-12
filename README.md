@@ -14,6 +14,12 @@ We have two folders
 
 The `app/` is where the app is/will/should be. And the `tooling/` directory currently are bits and pieces of some of our hobby tools we develop for ourselves, but are all in progress and not maintaned actively. 
 
+# Documentation and plan
+
+(note that this is work in progress)
+
+https://docs.google.com/document/d/1bu0DkkK5cvoPJLR3ljY7SYGIDmV_pnxvFefLS4Va93I/edit?usp=sharing
+
 # Short project description
 
 The goal is top smooth the dapp and web3 experience so that usage feels seemless like web2, but still being cryptographically secure and decentralized
